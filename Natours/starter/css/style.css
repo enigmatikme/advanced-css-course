@@ -1,3 +1,4 @@
+
 /*
 COLORS:
 
@@ -6,3 +7,84 @@ Medium green: #55c57a
 Dark green: #28b485
 
 */
+
+/* reset using universal selector, it will select each and every element and
+apply these selectors to it */
+* {
+  margin: 0;
+  padding: 0;
+  /* elements have default margin and padding, we want to start clean */
+  box-sizing: border-box;
+  /* doesnt add specified widht and height on to element */
+}
+
+body {
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.7;
+  /* 1.7 times bigger than the predefined line-height */
+  color: #777;
+
+  padding: 30px;
+}
+
+.header {
+  height: 95vh;
+  /* 95% of viewport height */
+  position: relative;
+  /* for the logobox absolute positioning where top and let start to count from*/
+  background-image: linear-gradient(
+    to right bottom,
+    rgba(126, 213, 111, 0.801),
+    #28b485), 
+    url(../img/hero.jpg);
+  background-size: cover;
+  /* makes sure that it stretches out while maintaing its aspect ratio */
+  background-position: top;
+  /* as image size changes (resizing browser) image will remain attached on top */
+  clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+}
+
+.logo-box {
+  position: absolute;
+  top: 40px;
+  left: 40px;
+}
+
+.logo {
+  height: 35px;
+  /* width will be figured out by the broswer, can also do opposite */
+}
+
+.text-box {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  /* relative to parent div with absolute */
+  transform: translate(-50%, -50%);
+  /* shift half of the width and top of elements height relative to element*/
+}
+
+.heading-primary {
+  color: #fff;
+  text-transform: uppercase;
+}
+
+.heading-primary-main {
+  display: block;
+  /* by default it is inline, block elements occupy entire widths that they have
+  available and create line breaks after and before them */
+  font-weight: 400;
+  font-size: 60px;
+  letter-spacing: 35px;
+}
+
+
+.heading-primary-sub {
+  display: block;
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: 17.4px;
+}
+
