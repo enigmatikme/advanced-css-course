@@ -138,14 +138,28 @@ control over the steps of animation */
     opacity: 0;
     transform: translateX(100px);
   }
-
+  
   80% {
     transform: translateX(-10px);
+  }
+  
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+
+@keyframes moveInBottom {
+  /* for browser performance its best to only animate 2 things, here it is
+  opacity and transform proprety */
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
   }
 
   100% {
     opacity: 1;
-    transform: translate(0);
+    transform: translateY(0);
   }
 }
 
@@ -163,17 +177,71 @@ hover, clicked. to style elements under special conditions */
   its another block. shoudl always do this when you want to add heights weight
   to element*/
   display: inline-block;
+  border-radius: 100px;
+  transition: all .2s;
+  /* transition has to be on initial state, makes animations more fluid */
+  position: relative;
+  /* to hide the after pseudoelement behind our btn*/
+
 }
 
 .btn:hover {
   transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgb(0, 0, 0,.2);
 }
 
 .btn:active {
+  /* -1px is in relation to the initial state, the link state^, not the hover*/
   transform: translateY(-1px);
+  box-shadow: 0 5px 10px rgb(0, 0, 0,.2);
+
 }
 
 .btn-white {
   background-color: #fff;
   color: #777
 }
+
+/* after pseudoelement adds a virtual element right after the element that we're
+selecting, and we can style that element */
+.btn::after {
+  /* have to specifiy a content element but can be empty or else nothing will appear*/
+  content: ""; 
+  display: inline-block;
+  /* is inline block because the btn we have is also an inline-block*/
+  height: 100%;
+  width: 100%;
+  border-radius: 100px;
+  top: 0;
+  left: 0;
+  position: absolute;
+  z-index: -1;
+  transition: all .4s;
+  /* trans prop has to be on initial state*/
+}
+
+/* to make the background color white we need to declare it (why tho) */
+.btn-white::after {
+  background-color: #fff;
+}
+
+/* when we hover we want some styles for the after pseudolement */  
+.btn:hover::after {
+  transform: scaleX(1.4) scaleY(1.6);
+  /* transform: scale(1.5); */
+  /* scale increases element, 2 double the size */
+  opacity: 0;
+  /*trick to fade something out*/
+}
+
+.btn-animated {
+  animation: moveInBottom .5s ease-out .75s;
+  /* [animation name, anim duration, anim timing function, anim delay] */
+  animation-fill-mode: backwards;
+  /* fixes btn visibility upon first refresh: will automatically apply the
+  styles of the 0% before anim starts */
+}
+
+/* .btn-white {
+  animation: moveInBottom 1s ease-out;
+} */
