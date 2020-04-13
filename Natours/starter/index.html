@@ -14,22 +14,26 @@
     </head>
     <body>
         <header class="header">
-            <div class="logo-box">
+            <div class="header__logo-box">
                 <!-- img is an inline element so its better practice to place
                 inside of div and position it -->
-                <img src="img/logo-white.png" alt="Logo" class="logo"/>
+                <img src="img/logo-white.png" alt="Logo" class="header__logo"/>
             </div>
-            <div class="text-box">
+            <div class="header__text-box">
+                <!-- we don't change the class to block because this is a standalone
+                element, we could use it elsewhere -->
                 <h1 class="heading-primary">
-                    <!-- span elements simply allow you to style text differently-->
-                    <span class="heading-primary-main">Outdoors</span>
-                    <span class="heading-primary-sub">is where life happens</span>
+                    <!-- span elements simply allow you to style text
+                    differently-->
+                    <!-- modifiers of heading-primary bc they create a different
+                    version of heading primary  -->
+                    <span class="heading-primary--main">Outdoors</span>
+                    <span class="heading-primary--sub">is where life happens</span>
                 </h1>
                 
-                <a href="#" class="btn btn-white btn-animated">Discover our tours</a>
+                <a href="#" class="btn btn--white btn--animated">Discover our tours</a>
             </div>
         </header>
-        
     </body>
 </html>
 

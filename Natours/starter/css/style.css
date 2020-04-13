@@ -61,13 +61,13 @@ body {
   clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
 }
 
-.logo-box {
+.header__logo-box {
   position: absolute;
   top: 4rem;
   left: 4rem;
 }
  
-.logo {
+.header__logo {
   height: 3.5rem;
   /* width will be figured out by the broswer, can also do opposite */
 }
@@ -77,7 +77,7 @@ body {
   animation: moveInRight 5s ease-out;
 } */
 
-.text-box {
+.header__text-box {
   position: absolute;
   top: 40%;
   left: 50%;
@@ -99,7 +99,7 @@ body {
   margin-bottom: 6rem;
 }
 
-.heading-primary-main {
+.heading-primary--main {
   display: block;
   /* by default it is inline, block elements occupy entire widths that they have
   available and create line breaks after and before them */
@@ -116,7 +116,7 @@ body {
   
 }
 
-.heading-primary-sub {
+.heading-primary--sub {
   display: block;
   font-size: 2rem;
   font-weight: 700;
@@ -213,7 +213,7 @@ hover, clicked. to style elements under special conditions */
 
 }
 
-.btn-white {
+.btn--white {
   background-color: #fff;
   color: #777
 }
@@ -250,7 +250,7 @@ selecting, and we can style that element */
   /*trick to fade something out*/
 }
 
-.btn-animated {
+.btn--animated {
   animation: moveInBottom .5s ease-out .75s;
   /* [animation name, anim duration, anim timing function, anim delay] */
   animation-fill-mode: backwards;
