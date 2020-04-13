@@ -10,23 +10,38 @@ Dark green: #28b485
 
 /* reset using universal selector, it will select each and every element and
 apply these selectors to it */
-* {
+*,
+*::after, 
+*::before {
+  /** after & before because only the 'real' elements get these behaviors*/
   margin: 0;
   padding: 0;
   /* elements have default margin and padding, we want to start clean */
-  box-sizing: border-box;
-  /* doesnt add specified widht and height on to element */
+  box-sizing: inherit;
+  /* elements inherit this. this is not by itself an inherited prop */
+}
+/* root font size is set in html */
+html {
+  /* by setting default root font size users cannot modify it anymore and those
+  with bad eyesight wont be able to modify root font size */
+  /* .625*16 = 10 of 16px (default root font size) */
+  /*! rems do not work with ie */
+  font-size: 62.5%;
 }
 
 body {
   font-family: "Lato", sans-serif;
   font-weight: 400;
-  font-size: 16px;
+  /* font-size: 16px; */
   line-height: 1.7;
   /* 1.7 times bigger than the predefined line-height */
   color: #777;
+  padding: 3rem;
+  /** better practice to do box-sizing here and inheritin global by CSS
+  ** community so its easier to change box sizing in plugings or other components*/
+  /* doesnt add specified widht and height on to element */
+  box-sizing: border-box;
 
-  padding: 30px;
 }
 
 .header {
@@ -48,12 +63,12 @@ body {
 
 .logo-box {
   position: absolute;
-  top: 40px;
-  left: 40px;
+  top: 4rem;
+  left: 4rem;
 }
-
+ 
 .logo {
-  height: 35px;
+  height: 3.5rem;
   /* width will be figured out by the broswer, can also do opposite */
 }
 
@@ -81,7 +96,7 @@ body {
   backface-visibility: hidden;
   /* gets rid of the slight div shake for keyframes animation, hides what is
   behind the animated div. no one knows why it happens */
-  margin-bottom: 60px;
+  margin-bottom: 6rem;
 }
 
 .heading-primary-main {
@@ -89,8 +104,8 @@ body {
   /* by default it is inline, block elements occupy entire widths that they have
   available and create line breaks after and before them */
   font-weight: 400;
-  font-size: 60px;
-  letter-spacing: 35px;
+  font-size: 6rem;
+  letter-spacing: 3.5rem;
 
   animation-name: moveInLeft;
   animation-duration: 1s;
@@ -103,9 +118,9 @@ body {
 
 .heading-primary-sub {
   display: block;
-  font-size: 20px;
+  font-size: 2rem;
   font-weight: 700;
-  letter-spacing: 17.4px;
+  letter-spacing: 1.74rem;
 
   /* instead of writing line 82-84 you can use animation prop to define vals */
   animation: moveInRight 1s ease-out;
@@ -118,11 +133,11 @@ control over the steps of animation */
   opacity and transform proprety */
   0% {
     opacity: 0;
-    transform: translateX(-100px);
+    transform: translateX(-10rem);
   }
 
   80% {
-    transform: translateX(10px);
+    transform: translateX(1rem);
   }
 
   100% {
@@ -136,11 +151,11 @@ control over the steps of animation */
   opacity and transform proprety */
   0% {
     opacity: 0;
-    transform: translateX(100px);
+    transform: translateX(10rem);
   }
   
   80% {
-    transform: translateX(-10px);
+    transform: translateX(-1rem);
   }
   
   100% {
@@ -154,7 +169,7 @@ control over the steps of animation */
   opacity and transform proprety */
   0% {
     opacity: 0;
-    transform: translateY(30px);
+    transform: translateY(3rem);
   }
 
   100% {
@@ -172,28 +187,29 @@ hover, clicked. to style elements under special conditions */
 /* visited is when the user has clicked on the link before and visiting again */
   text-transform: uppercase;
   text-decoration: none;
-  padding: 15px 40px;
+  padding: 1.5rem 4rem;
   /* default is inline element bc its text, so inline block prop treats it like
   its another block. shoudl always do this when you want to add heights weight
   to element*/
   display: inline-block;
-  border-radius: 100px;
+  border-radius: 10rem;
   transition: all .2s;
   /* transition has to be on initial state, makes animations more fluid */
   position: relative;
   /* to hide the after pseudoelement behind our btn*/
+  font-size: 1.6rem;
 
 }
 
 .btn:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 10px 20px rgb(0, 0, 0,.2);
+  transform: translateY(-3rem);
+  box-shadow: 0 1rem 2rem rgb(0, 0, 0,.2);
 }
 
 .btn:active {
   /* -1px is in relation to the initial state, the link state^, not the hover*/
-  transform: translateY(-1px);
-  box-shadow: 0 5px 10px rgb(0, 0, 0,.2);
+  transform: translateY(-1rem);
+  box-shadow: 0 .5rem 1rem rgb(0, 0, 0,.2);
 
 }
 
@@ -211,7 +227,7 @@ selecting, and we can style that element */
   /* is inline block because the btn we have is also an inline-block*/
   height: 100%;
   width: 100%;
-  border-radius: 100px;
+  border-radius: 10rem;
   top: 0;
   left: 0;
   position: absolute;
