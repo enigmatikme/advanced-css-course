@@ -154,7 +154,7 @@ hover, clicked. to style elements under special conditions */
   font-size: 1.6rem; }
 
 .btn:hover {
-  transform: translateY(-3rem);
+  transform: translateY(-0.3rem);
   box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2); }
 
 .btn:active {
@@ -184,7 +184,7 @@ selecting, and we can style that element */
   /* trans prop has to be on initial state*/ }
 
 /* to make the background color white we need to declare it (why tho) */
-.btn-white::after {
+.btn--white::after {
   background-color: #fff; }
 
 /* when we hover we want some styles for the after pseudolement */
@@ -195,7 +195,7 @@ selecting, and we can style that element */
   opacity: 0;
   /*trick to fade something out*/ }
 
-.btn-- animated {
+.btn--animated {
   animation: moveInBottom .5s ease-out .75s;
   /* [animation name, anim duration, anim timing function, anim delay] */
   animation-fill-mode: backwards;

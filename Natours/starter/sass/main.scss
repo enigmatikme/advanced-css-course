@@ -2,8 +2,12 @@
 $color-primary: #55c57a;
 $color-primary-light: #7ed56f;
 $color-primary-dark: #28b485;
-$color-primary-grey: #777;
-$color-primary-white: #fff;
+
+$color-grey: #777;
+$color-white: #fff;
+$color-black: #000;
+
+
 /* reset using universal selector, it will select each and every element and
 apply these selectors to it */
 *,
@@ -31,7 +35,7 @@ body {
   /* font-size: 16px; */
   line-height: 1.7;
   /* 1.7 times bigger than the predefined line-height */
-  color: $color-primary-grey;
+  color: $color-grey;
   padding: 3rem;
   /** better practice to do box-sizing here and inheritin global by CSS
   ** community so its easier to change box sizing in plugings or other components*/
@@ -87,7 +91,7 @@ body {
 }
 
 .heading-primary {
-  color: $color-primary-white;
+  color: $color-white;
   text-transform: uppercase;
 
   backface-visibility: hidden;
@@ -199,20 +203,20 @@ hover, clicked. to style elements under special conditions */
 }
 
 .btn:hover {
-  transform: translateY(-3rem);
-  box-shadow: 0 1rem 2rem rgba(0, 0, 0, .2);
+  transform: translateY(-.3rem);
+  box-shadow: 0 1rem 2rem rgba($color-black, .2);
 }
 
 .btn:active {
   /* -1px is in relation to the initial state, the link state^, not the hover*/
   transform: translateY(-1rem);
-  box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .2);
+  box-shadow: 0 .5rem 1rem rgba($color-black, .2);
 
 }
 
 .btn--white {
-  background-color: $color-primary-white;
-  color: $color-primary-grey
+  background-color: $color-white;
+  color: $color-grey
 }
 
 /* after pseudoelement adds a virtual element right after the element that we're
@@ -234,8 +238,9 @@ selecting, and we can style that element */
 }
 
 /* to make the background color white we need to declare it (why tho) */
-.btn-white::after {
-  background-color: $color-primary-white;
+.btn--white::after {
+  // background-color: red;
+  background-color: $color-white;
 }
 
 /* when we hover we want some styles for the after pseudolement */  
@@ -247,7 +252,7 @@ selecting, and we can style that element */
   /*trick to fade something out*/
 }
 
-.btn-- animated {
+.btn--animated {
   animation: moveInBottom .5s ease-out .75s;
   /* [animation name, anim duration, anim timing function, anim delay] */
   animation-fill-mode: backwards;
