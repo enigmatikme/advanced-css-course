@@ -1,0 +1,10 @@
+.row {
+  //standard grid is 1440px width so 1440/10 = xrem
+  max-width: 114rem;
+  // if it has the available space then it will fit 114rem, if not it will fill
+  // 100% of width that it has
+  background-color: #eee;
+  margin: 0 auto;
+  // trick to center block elements within block elements, auto will figure out
+  // the margin that we want on the right and left side
+}

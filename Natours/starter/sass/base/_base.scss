@@ -1,0 +1,28 @@
+/* reset using universal selector, it will select each and every element and
+apply these selectors to it */
+*,
+*::after, 
+*::before {
+  /** after & before because only the 'real' elements get these behaviors*/
+  margin: 0;
+  padding: 0;
+  /* elements have default margin and padding, we want to start clean */
+  box-sizing: inherit;
+  /* elements inherit this. this is not by itself an inherited prop */
+}
+/* root font size is set in html */
+//! not included as typography bc this defines what 1rem is
+html {
+  /* by setting default root font size users cannot modify it anymore and those
+  with bad eyesight wont be able to modify root font size */
+  /* .625*16 = 10 of 16px (default root font size) */
+  /*! rems do not work with ie */
+  font-size: 62.5%;
+} 
+
+body {
+  /** better practice to do box-sizing here and inheritin global by CSS
+  ** community so its easier to change box sizing in plugings or other components*/
+  /* doesnt add specified widht and height on to element */
+  box-sizing: border-box;
+}
