@@ -1,0 +1,13 @@
+// * Clerfix appends a pseudo-after element which will clear these floats
+@mixin clearfix {
+  &::after { //.row::after
+    content: ""; //must always incl this prop or else pseudo-el wont appear on page
+    // we want it empty bc we dont want to see this element on the page
+    display: table;
+    //standard version of clearfix 
+    clear: both;
+    //this will clear both floats, left and right (so it wont matter if we use
+    //left or right
+
+  }
+}
