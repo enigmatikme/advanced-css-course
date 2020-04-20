@@ -19,82 +19,10 @@ html {
   font-size: 62.5%; }
 
 body {
-  font-family: "Lato", sans-serif;
-  font-weight: 400;
-  /* font-size: 16px; */
-  line-height: 1.7;
-  /* 1.7 times bigger than the predefined line-height */
-  color: #777;
-  padding: 3rem;
   /** better practice to do box-sizing here and inheritin global by CSS
   ** community so its easier to change box sizing in plugings or other components*/
   /* doesnt add specified widht and height on to element */
   box-sizing: border-box; }
-
-.header {
-  height: 95vh;
-  /* 95% of viewport height */
-  position: relative;
-  /* for the logobox absolute positioning where top and let start to count from*/
-  background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.8), rgba(40, 180, 133, 0.8)), url(../img/hero.jpg);
-  background-size: cover;
-  /* makes sure that it stretches out while maintaing its aspect ratio */
-  background-position: top;
-  /* as image size changes (resizing browser) image will remain attached on top */
-  clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%); }
-
-.header__logo-box {
-  position: absolute;
-  top: 4rem;
-  left: 4rem; }
-
-.header__logo {
-  height: 3.5rem;
-  /* width will be figured out by the broswer, can also do opposite */ }
-
-/* animate parent div on hover, targeting logo alone does not work, makes it blink */
-/* .logo-box:hover .logo{
-  animation: moveInRight 5s ease-out;
-} */
-.header__text-box {
-  position: absolute;
-  top: 40%;
-  left: 50%;
-  /* relative to parent div with absolute */
-  transform: translate(-50%, -50%);
-  /* shift half of the width and top of elements height relative to element*/
-  text-align: center;
-  /* aligns text for button and all other elements, using absolute positioning
-  would be overkill*/ }
-
-.heading-primary {
-  color: #fff;
-  text-transform: uppercase;
-  backface-visibility: hidden;
-  /* gets rid of the slight div shake for keyframes animation, hides what is
-  behind the animated div. no one knows why it happens */
-  margin-bottom: 6rem; }
-
-.heading-primary--main {
-  display: block;
-  /* by default it is inline, block elements occupy entire widths that they have
-  available and create line breaks after and before them */
-  font-weight: 400;
-  font-size: 6rem;
-  letter-spacing: 3.5rem;
-  animation-name: moveInLeft;
-  animation-duration: 1s;
-  animation-timing-function: ease-out;
-  /* animation-delay: 3s;
-  animation-iteration-count: 3; */ }
-
-.heading-primary--sub {
-  display: block;
-  font-size: 2rem;
-  font-weight: 700;
-  letter-spacing: 1.74rem;
-  /* instead of writing line 82-84 you can use animation prop to define vals */
-  animation: moveInRight 1s ease-out; }
 
 /* a more advanced animation property than trasition bc it gives you more
 control over the steps of animation */
@@ -132,76 +60,241 @@ control over the steps of animation */
     opacity: 1;
     transform: translateY(0); } }
 
-/*link is the link psuedoclass. pseudoclasses: are a special state of the
-selector, it is the state of the btn selector. includes select last child,
-hover, clicked. to style elements under special conditions */
-.btn:link,
-.btn:visited {
-  /* link is a special state of a seletor when it is an anchor element */
-  /* visited is when the user has clicked on the link before and visiting again */
+body {
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  /* font-size: 16px; */
+  line-height: 1.7;
+  /* 1.7 times bigger than the predefined line-height */
+  color: #777;
+  padding: 3rem; }
+
+.heading-primary {
+  color: #fff;
   text-transform: uppercase;
-  text-decoration: none;
-  padding: 1.5rem 4rem;
-  /* default is inline element bc its text, so inline block prop treats it like
+  backface-visibility: hidden;
+  /* gets rid of the slight div shake for keyframes animation, hides what is
+  behind the animated div. no one knows why it happens */
+  margin-bottom: 6rem; }
+  .heading-primary--main {
+    display: block;
+    /* by default it is inline, block elements occupy entire widths that they have
+    available and create line breaks after and before them */
+    font-weight: 400;
+    font-size: 6rem;
+    letter-spacing: 3.5rem;
+    animation-name: moveInLeft;
+    animation-duration: 1s;
+    animation-timing-function: ease-out;
+    /* animation-delay: 3s;
+    animation-iteration-count: 3; */ }
+  .heading-primary--sub {
+    display: block;
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: 1.74rem;
+    /* instead of writing line 82-84 you can use animation prop to define vals */
+    animation: moveInRight 1s ease-out; }
+
+.heading-secondary {
+  font-size: 3.5rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  display: inline-block;
+  background-image: linear-gradient(to right, #7ed56f, #28b485);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  letter-spacing: .2rem;
+  transition: all .2s; }
+  .heading-secondary:hover {
+    transform: skewY(2deg) skewX(15deg) scale(1.1);
+    text-shadow: 0.5rem 1rem 2rem rgba(0, 0, 0, 0.2); }
+
+.u-center-text {
+  text-align: center; }
+
+.u-margin-bottom-8 {
+  margin-bottom: 8rem; }
+
+body {
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  /* font-size: 16px; */
+  line-height: 1.7;
+  /* 1.7 times bigger than the predefined line-height */
+  color: #777;
+  padding: 3rem; }
+
+.heading-primary {
+  color: #fff;
+  text-transform: uppercase;
+  backface-visibility: hidden;
+  /* gets rid of the slight div shake for keyframes animation, hides what is
+  behind the animated div. no one knows why it happens */
+  margin-bottom: 6rem; }
+  .heading-primary--main {
+    display: block;
+    /* by default it is inline, block elements occupy entire widths that they have
+    available and create line breaks after and before them */
+    font-weight: 400;
+    font-size: 6rem;
+    letter-spacing: 3.5rem;
+    animation-name: moveInLeft;
+    animation-duration: 1s;
+    animation-timing-function: ease-out;
+    /* animation-delay: 3s;
+    animation-iteration-count: 3; */ }
+  .heading-primary--sub {
+    display: block;
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: 1.74rem;
+    /* instead of writing line 82-84 you can use animation prop to define vals */
+    animation: moveInRight 1s ease-out; }
+
+.heading-secondary {
+  font-size: 3.5rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  display: inline-block;
+  background-image: linear-gradient(to right, #7ed56f, #28b485);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  letter-spacing: .2rem;
+  transition: all .2s; }
+  .heading-secondary:hover {
+    transform: skewY(2deg) skewX(15deg) scale(1.1);
+    text-shadow: 0.5rem 1rem 2rem rgba(0, 0, 0, 0.2); }
+
+.btn {
+  /* after pseudoelement adds a virtual element right after the element that we're
+  selecting, and we can style that element */
+  /* &-white {
+    animation: moveInBottom 1s ease-out;
+  } */ }
+  .btn:link, .btn:visited {
+    /*link is the link psuedoclass. pseudoclasses: are a special state of the
+  selector, it is the state of the btn selector. includes select last child,
+  hover, clicked. to style elements under special conditions */
+    /* link is a special state of a seletor when it is an anchor element */
+    /* visited is when the user has clicked on the link before and visiting again */
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 1.5rem 4rem;
+    /* default is inline element bc its text, so inline block prop treats it like
   its another block. shoudl always do this when you want to add heights weight
   to element*/
-  display: inline-block;
-  border-radius: 10rem;
-  transition: all .2s;
-  /* transition has to be on initial state, makes animations more fluid */
+    display: inline-block;
+    border-radius: 10rem;
+    transition: all .2s;
+    /* transition has to be on initial state, makes animations more fluid */
+    position: relative;
+    /* to hide the after pseudoelement behind our btn*/
+    font-size: 1.6rem; }
+  .btn:hover {
+    transform: translateY(-0.3rem);
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
+    /* when we hover we want some styles for the after pseudolement */ }
+    .btn:hover::after {
+      transform: scaleX(1.4) scaleY(1.6);
+      /* transform: scale(1.5); */
+      /* scale increases element, 2 double the size */
+      opacity: 0;
+      /*trick to fade something out*/ }
+  .btn:active {
+    /* -1px is in relation to the initial state, the link state^, not the hover*/
+    transform: translateY(-1rem);
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2); }
+  .btn--white {
+    background-color: #fff;
+    color: #777;
+    /* to make the background color white we need to declare it (why tho) */ }
+    .btn--white::after {
+      background-color: #fff; }
+  .btn::after {
+    /* have to specifiy a content element but can be empty or else nothing will appear*/
+    content: "";
+    display: inline-block;
+    /* is inline block because the btn we have is also an inline-block*/
+    height: 100%;
+    width: 100%;
+    border-radius: 10rem;
+    top: 0;
+    left: 0;
+    position: absolute;
+    z-index: -1;
+    transition: all .4s;
+    /* trans prop has to be on initial state*/ }
+  .btn--animated {
+    animation: moveInBottom .5s ease-out .75s;
+    /* [animation name, anim duration, anim timing function, anim delay] */
+    animation-fill-mode: backwards;
+    /* fixes btn visibility upon first refresh: will automatically apply the
+    styles of the 0% before anim starts */ }
+
+.row {
+  max-width: 114rem;
+  margin: 0 auto; }
+  .row:not(:last-child) {
+    margin-bottom: 8rem; }
+  .row::after {
+    content: "";
+    display: table;
+    clear: both; }
+  .row [class^="col-"] {
+    float: left; }
+    .row [class^="col-"]:not(:last-child) {
+      margin-right: 6rem; }
+  .row .col-1-of-2 {
+    width: calc((100% - 6rem) / 2); }
+  .row .col-1-of-3 {
+    width: calc((100% - (6rem * 2)) / 3); }
+  .row .col-2-of-3 {
+    width: calc( 2 * ((100% - (6rem * 2)) / 3) + 6rem); }
+  .row .col-1-of-4 {
+    width: calc((100% - (6rem * 3)) / 4); }
+  .row .col-2-of-4 {
+    width: calc( 2 * ((100% - (6rem * 3)) / 4) + 6rem); }
+  .row .col-3-of-4 {
+    width: calc( 3 * ((100% - (6rem * 3)) / 4) + 2 * 6rem); }
+
+.header {
+  height: 95vh;
+  /* 95% of viewport height */
   position: relative;
-  /* to hide the after pseudoelement behind our btn*/
-  font-size: 1.6rem; }
+  /* for the logobox absolute positioning where top and let start to count from*/
+  background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.8), rgba(40, 180, 133, 0.8)), url(../img/hero.jpg);
+  background-size: cover;
+  /* makes sure that it stretches out while maintaing its aspect ratio */
+  background-position: top;
+  /* as image size changes (resizing browser) image will remain attached on top */
+  clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+  /* ampersand copies 'parent' selector */ }
+  .header__logo-box {
+    position: absolute;
+    top: 4rem;
+    left: 4rem; }
+  .header__logo {
+    height: 3.5rem;
+    /* width will be figured out by the broswer, can also do opposite */ }
+  .header__text-box {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    /* relative to parent div with absolute */
+    transform: translate(-50%, -50%);
+    /* shift half of the width and top of elements height relative to element*/
+    text-align: center;
+    /* aligns text for button and all other elements, using absolute positioning
+    would be overkill*/ }
 
-.btn:hover {
-  transform: translateY(-0.3rem);
-  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2); }
-
-.btn:active {
-  /* -1px is in relation to the initial state, the link state^, not the hover*/
-  transform: translateY(-1rem);
-  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2); }
-
-.btn--white {
-  background-color: #fff;
-  color: #777; }
-
-/* after pseudoelement adds a virtual element right after the element that we're
-selecting, and we can style that element */
-.btn::after {
-  /* have to specifiy a content element but can be empty or else nothing will appear*/
-  content: "";
-  display: inline-block;
-  /* is inline block because the btn we have is also an inline-block*/
-  height: 100%;
-  width: 100%;
-  border-radius: 10rem;
-  top: 0;
-  left: 0;
-  position: absolute;
-  z-index: -1;
-  transition: all .4s;
-  /* trans prop has to be on initial state*/ }
-
-/* to make the background color white we need to declare it (why tho) */
-.btn--white::after {
-  background-color: #fff; }
-
-/* when we hover we want some styles for the after pseudolement */
-.btn:hover::after {
-  transform: scaleX(1.4) scaleY(1.6);
-  /* transform: scale(1.5); */
-  /* scale increases element, 2 double the size */
-  opacity: 0;
-  /*trick to fade something out*/ }
-
-.btn--animated {
-  animation: moveInBottom .5s ease-out .75s;
-  /* [animation name, anim duration, anim timing function, anim delay] */
-  animation-fill-mode: backwards;
-  /* fixes btn visibility upon first refresh: will automatically apply the
-  styles of the 0% before anim starts */ }
-
-/* .btn-white {
-  animation: moveInBottom 1s ease-out;
+/* animate parent div on hover, targeting logo alone does not work, makes it blink */
+/* .logo-box:hover .logo{
+  animation: moveInRight 5s ease-out;
 } */
+.section-about {
+  background-color: #f7f7f7;
+  padding: 25vh 0;
+  margin-top: -20vh; }

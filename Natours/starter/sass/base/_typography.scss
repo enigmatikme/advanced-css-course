@@ -45,3 +45,29 @@ body {
     animation: moveInRight 1s ease-out;
   }
 }
+
+.heading-secondary {
+  font-size: 3.5rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  display: inline-block;
+  //* takes up necessary width of text, not 100% width
+  background-image: linear-gradient(to right, $color-primary-light, $color-primary-dark);
+  background-clip: text;
+  -webkit-background-clip: text;
+  // background gets clipped exactly where the text is
+  //! both props added for compatibility issue ^
+  // -webkit-text-fill-color: transparent;
+  color: transparent;
+  letter-spacing: .2rem;
+  // bc of rounding issues such a small px doesn't have to be rem (2px)
+  transition: all .2s;
+  // all - all props that can undergo transition will do so
+
+  &:hover {
+    transform: skewY(2deg) skewX(15deg) scale(1.1);
+    //110%
+    text-shadow: .5rem 1rem 2rem rgba($color-black, .2);
+    //two directions. 5px is x direct 10 rem in y 2px blur, (color, opacity)
+  }
+}

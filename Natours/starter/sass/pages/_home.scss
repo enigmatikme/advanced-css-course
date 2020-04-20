@@ -1,0 +1,7 @@
+.section-about {
+  background-color: $color-grey-light-1;
+  padding: 25vh 0;
+  margin-top: -20vh 
+  //* to move the grey background up to fill the header white triangle space,
+  //* calculated via header.scss 95vh-75vh
+}
