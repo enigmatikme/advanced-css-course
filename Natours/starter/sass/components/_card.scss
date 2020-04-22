@@ -1,0 +1,21 @@
+.card {
+  //perspective has to be on the parent of the transform prop, experiment.
+  //higher it is less dramatic
+  perspective: 150rem;
+  -moz-perspective: 150rem;
+  //to work in firefox
+
+  &__side {
+    background-color: orangered;
+    height: 50rem;
+    transition: all .8s;
+
+    color: #ffffff;
+    font-size: 1.6rem;
+  }
+
+  &:hover &__side {
+  //when we hover we also want the side to transform
+    transform: rotateY(180deg);
+  }
+}
