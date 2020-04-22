@@ -5,3 +5,16 @@
   //* to move the grey background up to fill the header white triangle space,
   //* calculated via header.scss 95vh-75vh
 }
+
+.section-features {
+  padding: 20rem 0; 
+  background-image: linear-gradient(
+    to right bottom,
+    /* only in sass can you insert hexidecimal val */
+    rgba($color-primary-light, 0.8),
+    rgba($color-primary-dark, 0.8)), 
+  url(../img/nat-4.jpg);
+  background-size: cover;
+  clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+
+}
