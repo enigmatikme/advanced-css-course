@@ -4,18 +4,52 @@
   perspective: 150rem;
   -moz-perspective: 150rem;
   //to work in firefox
-
+  position: relative;
+  height: 50rem;
+  //because children are positioned absolute the height collapses and there is
+  //no height, and there isn't a clearfix problem -- fixes persepctive 
   &__side {
     background-color: orangered;
     height: 50rem;
-    transition: all .8s;
-
+    transition: all .8s ease;
+    
     color: #ffffff;
     font-size: 1.6rem;
+    
+    position: absolute;
+    top: 0;
+    left: 0;
+    //pos absolute takes it out of flow so div only fits necessary width
+    width: 100%;
+    backface-visibility: hidden;
+    //hides back part of element, wont be able to see backside of card
+    border-radius: 3px;
+    box-shadow: 0 1.5rem 4rem rgba($color-black, .15);
+    //[x axis, y axis, blur, color/opacity
+    //! change into variable, shadow 1, shadow 2 shadow 3 for reusability
+    
+    &--front {
+      background-color: $color-white;
+    }
+
+    &--back {
+    //diff than front size is back is already rotated 180 deg, so on hover it
+    //returns to 0
+      transform: rotateY(180deg);
+
+      &-1 {
+        background-image: linear-gradient(to right bottom, $color-secondary-light, $color-secondary-dark);
+      }
+    }
   }
 
-  &:hover &__side {
+  &:hover &__side--front {
   //when we hover we also want the side to transform
     transform: rotateY(180deg);
+  }
+
+  &:hover &__side--back {
+  //when we hover we also want the side to transform
+    transform: rotateY(0deg);
   }
 }
