@@ -15,6 +15,12 @@
     rgba($color-primary-dark, 0.8)), 
   url(../img/nat-4.jpg);
   background-size: cover;
-  clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+  margin-top: -10rem;
+  transform: skewY(-7deg);
+  //instead of using clip-path, this is another alternative
 
+  & > * { 
+    // selects everything that is a direct child = row, if & * it selects ALL children
+    transform: skewY(7deg);
+  }
 }
