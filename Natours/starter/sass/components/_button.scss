@@ -1,23 +1,23 @@
 .btn {
   &:link, &:visited {
-    /*link is the link psuedoclass. pseudoclasses: are a special state of the
+  /*link is the link psuedoclass. pseudoclasses: are a special state of the
   selector, it is the state of the btn selector. includes select last child,
   hover, clicked. to style elements under special conditions */
   /* link is a special state of a seletor when it is an anchor element */
   /* visited is when the user has clicked on the link before and visiting again */
-  text-transform: uppercase;
-  text-decoration: none;
-  padding: 1.5rem 4rem;
-  /* default is inline element bc its text, so inline block prop treats it like
-  its another block. shoudl always do this when you want to add heights weight
-  to element*/
-  display: inline-block;
-  border-radius: 10rem;
-  transition: all .2s;
-  /* transition has to be on initial state, makes animations more fluid */
-  position: relative;
-  /* to hide the after pseudoelement behind our btn*/
-  font-size: $default-font-size;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 1.5rem 4rem;
+    /* default is inline element bc its text, so inline block prop treats it like
+    its another block. shoudl always do this when you want to add heights weight
+    to element*/
+    display: inline-block;
+    border-radius: 10rem;
+    transition: all .2s;
+    /* transition has to be on initial state, makes animations more fluid */
+    position: relative;
+    /* to hide the after pseudoelement behind our btn*/
+    font-size: $default-font-size;
   }
 
   &:hover {
@@ -31,7 +31,7 @@
       /* scale increases element, 2 double the size */
       opacity: 0;
       /*trick to fade something out*/
-  }
+    }
   }
 
   &:active {
@@ -48,6 +48,17 @@
     &::after {
       // background-color: red;
       background-color: $color-white;
+    }
+  }
+
+  &--green {
+    background-color: $color-primary;
+    color: $color-white;
+
+    /* to make the background color white we need to declare it (why tho) */
+    &::after {
+      // background-color: red;
+      background-color: $color-primary;
     }
   }
 

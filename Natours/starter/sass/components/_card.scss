@@ -77,7 +77,10 @@
     //may not work in IE
     -webkit-clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
     clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
-
+    //! clip path in google chrome breaks overflow that we set on __side, so must define again
+    // border-radius: 3px;
+    // border-top-left-radius: 3px;
+    // border-top-right-radius: 3px;
     &--1 {
       //*path relative to compiled css file
       background-image: linear-gradient(to right bottom, $color-secondary-light, $color-secondary-dark), 

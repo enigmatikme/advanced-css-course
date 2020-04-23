@@ -133,6 +133,12 @@ body {
 .u-margin-bottom-big {
   margin-bottom: 8rem; }
 
+.u-margin-top-big {
+  margin-top: 8rem; }
+
+.u-margin-top-huge {
+  margin-top: 10rem; }
+
 body {
   font-family: "Lato", sans-serif;
   font-weight: 400;
@@ -210,8 +216,8 @@ body {
     text-decoration: none;
     padding: 1.5rem 4rem;
     /* default is inline element bc its text, so inline block prop treats it like
-  its another block. shoudl always do this when you want to add heights weight
-  to element*/
+    its another block. shoudl always do this when you want to add heights weight
+    to element*/
     display: inline-block;
     border-radius: 10rem;
     transition: all .2s;
@@ -239,6 +245,12 @@ body {
     /* to make the background color white we need to declare it (why tho) */ }
     .btn--white::after {
       background-color: #fff; }
+  .btn--green {
+    background-color: #55c57a;
+    color: #fff;
+    /* to make the background color white we need to declare it (why tho) */ }
+    .btn--green::after {
+      background-color: #55c57a; }
   .btn::after {
     /* have to specifiy a content element but can be empty or else nothing will appear*/
     content: "";
@@ -495,5 +507,5 @@ body {
 
 .section-tours {
   background-color: #f7f7f7;
-  padding: 25rem 0 50rem 0;
+  padding: 25rem 0 15rem 0;
   margin-top: -10rem; }
