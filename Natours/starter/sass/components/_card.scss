@@ -8,12 +8,13 @@
   -moz-perspective: 150rem;
   //to work in firefox
   position: relative;
-  height: 50rem;
+  height: 52rem;
   //because children are positioned absolute the height collapses and there is
   //no height, and there isn't a clearfix problem -- fixes persepctive 
   &__side {
     background-color: blue;
-    height: 50rem;
+    height: 52rem;
+    //have to specify height in both places because height of card & then sides
     transition: all .8s ease;
 
     position: absolute;
@@ -90,7 +91,7 @@
     font-size: 2.8rem;
     font-weight: 300;
     text-transform: uppercase;
-    text-align: right; 
+    text-align: right;
     color: $color-white;
     position: absolute;
     top: 12rem;
@@ -111,6 +112,27 @@
         rgba($color-secondary-dark, .85));
       //rgba to make it transparent
     }
-    
+  }
+
+  &__details {
+    padding: 3rem;
+
+    ul {
+      list-style: none;
+      width: 80%;
+      margin: 0 auto;
+      //centers lists to the center
+
+      li {
+        text-align: center;
+        font-size: 1.5rem;
+        padding: 1rem;
+
+        &:not(:last-child) {
+          border-bottom: 1px solid $color-grey-light-2;
+          
+        }
+      }
+    }
   }
 }
