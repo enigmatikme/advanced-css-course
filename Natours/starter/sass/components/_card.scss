@@ -47,6 +47,14 @@
       &--1 {
         background-image: linear-gradient(to right bottom, $color-secondary-light, $color-secondary-dark);
       }
+
+      &--2 {
+        background-image: linear-gradient(to right bottom, $color-primary-light, $color-primary-dark);
+      }
+
+      &--3 {
+        background-image: linear-gradient(to right bottom, $color-tertiary-light, $color-tertiary-dark);
+      }
     }
   }
 
@@ -71,19 +79,19 @@
     clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
 
     &--1 {
-      //path relative to compiled css file
+      //*path relative to compiled css file
       background-image: linear-gradient(to right bottom, $color-secondary-light, $color-secondary-dark), 
       url(../img/nat-5.jpg);
     }
 
     &--2 {
-      //path relative to compiled css file
-      background-image: url(../img/nat-5.jpg);
+      background-image: linear-gradient(to right bottom, $color-primary-light, $color-primary-dark), 
+      url(../img/nat-6.jpg);    
     }
 
     &--3 {
-      //path relative to compiled css file
-      background-image: url(../img/nat-5.jpg);
+      background-image: linear-gradient(to right bottom, $color-tertiary-light, $color-tertiary-dark), 
+      url(../img/nat-7.jpg);    
     }
   }
 
@@ -112,6 +120,18 @@
         rgba($color-secondary-dark, .85));
       //rgba to make it transparent
     }
+
+    &--2 {
+      background-image: linear-gradient(to right bottom, 
+        rgba($color-primary-light, .85),
+        rgba($color-primary-dark, .85));
+    }
+
+    &--3 {
+      background-image: linear-gradient(to right bottom, 
+        rgba($color-tertiary-light, .85),
+        rgba($color-tertiary-dark, .85));
+    }
   }
 
   &__details {
@@ -134,5 +154,35 @@
         }
       }
     }
+  }
+
+  //FRONT SIDE STYLING
+  &__cta {
+    position: absolute;
+    //centers element
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    //minus 50% of elements width NOT parent, & height 
+    width: 90%;
+    text-align: center;
+  }
+
+  &__price-box {
+  //contains both price-onyl, price-value
+    // text-align: center;
+    color: $color-white;
+    margin-bottom: 8rem;
+
+  }
+
+  &__price-only {
+    font-size: 1.4rem;
+    text-transform: uppercase;
+  }
+
+  &__price-value {
+    font-size: 6rem;
+    font-weight: 100;
   }
 }
