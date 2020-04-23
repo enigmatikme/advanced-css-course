@@ -285,7 +285,7 @@ body {
   position: relative;
   height: 50rem; }
   .card__side {
-    background-color: orangered;
+    background-color: blue;
     height: 50rem;
     transition: all .8s ease;
     color: #ffffff;
@@ -304,7 +304,7 @@ body {
       .card__side--back-1 {
         background-image: linear-gradient(to right bottom, #ffb900, #ff7730); }
   .card:hover .card__side--front {
-    transform: rotateY(180deg); }
+    transform: rotateY(-180deg); }
   .card:hover .card__side--back {
     transform: rotateY(0deg); }
 

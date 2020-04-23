@@ -9,7 +9,7 @@
   //because children are positioned absolute the height collapses and there is
   //no height, and there isn't a clearfix problem -- fixes persepctive 
   &__side {
-    background-color: orangered;
+    background-color: blue;
     height: 50rem;
     transition: all .8s ease;
     
@@ -45,7 +45,7 @@
 
   &:hover &__side--front {
   //when we hover we also want the side to transform
-    transform: rotateY(180deg);
+    transform: rotateY(-180deg);
   }
 
   &:hover &__side--back {
