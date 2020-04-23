@@ -36,7 +36,7 @@
 
   &:active {
     /* -1px is in relation to the initial state, the link state^, not the hover*/
-    transform: translateY(-1rem);
+    transform: translateY(-1px);
     box-shadow: 0 .5rem 1rem rgba($color-black, .2);
   }
 
