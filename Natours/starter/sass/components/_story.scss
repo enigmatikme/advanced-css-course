@@ -1,0 +1,34 @@
+.story {
+  width: 75%;
+  margin: 0 auto;
+  //it is a block element inside block element so we can use margin
+  box-shadow: 0 3rem 6rem rgba($color-black, .1);
+  //x, y, blur, color
+  background-color: $color-white;
+  border-radius: 3px;
+  padding: 6rem;
+  font-size: $default-font-size;
+  //paragraph will inherit
+  padding: 9rem;
+  //6 + 3 (&__shapes transform. element is taking up half of the padding so we
+  //makeup forit
+
+  &__shape {
+    width: 15rem;
+    height: 15rem;
+    float: left;
+    background-color: orangered;
+    -webkit-shape-outside: circle(50% at 50% 50%);
+    //defines where the content flows around the element -- circle
+    shape-outside: circle(50% at 50% 50%);
+    //define a vectorize shape, for circle you define size and position of the
+    //center [radius relative to current element (7.5r 15 in diameter), x y]
+    //* for this to work this element must be floated, and must have dimensions (width/height)
+    -webkit-clip-path: circle(50% at 50% 50%);
+    clip-path: circle(50% at 50% 50%);
+    //if we want element to look like circle, we use clippath
+    transform: translateX(-3rem );
+    //best way to move floated elements around
+  }
+
+}
