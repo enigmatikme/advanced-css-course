@@ -29,16 +29,49 @@
     clip-path: circle(50% at 50% 50%);
     //if we want element to look like circle, we use clippath
     transform: translateX(-3rem ) skewX(12deg);
-    ;
     //best way to move floated elements around
+    position: relative;
   }
 
   &__img {
     height: 100%;
     //100% of parent which is __shape = 15rem
+    transform: translateX(-4rem) scale(1.4);
+    // backface-visibility: hidden;
+    transition: all .5s;
+    border: none;
   }
 
   &__text {
     transform: skewX(12deg);
+  }
+
+  &__caption {
+  //initial state
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, 20%);
+    color: $color-white;
+    font-size: 1.7rem;
+    text-transform: uppercase;
+    text-align: center;
+    opacity: 0;
+    transition: all .5s;
+    backface-visibility: hidden;
+    //fixes little glitch when hover styles are applied
+  }
+
+  &:hover &__caption {
+  //as soon as story is hovered, we want to change caption
+    opacity: 1;
+    transform: translate(-50%, -50%);
+  }
+
+  &:hover &__img {
+    transform: translateX(-4rem) scale(1.2);
+    //i dont think transforms are inherited so translatex needed
+    filter: blur(3px) brightness(80%);
+
   }
 }
