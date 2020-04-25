@@ -12,6 +12,7 @@
   padding: 9rem;
   //6 + 3 (&__shapes transform. element is taking up half of the padding so we
   //makeup forit
+  transform: skewX(-12deg);
 
   &__shape {
     width: 15rem;
@@ -27,8 +28,17 @@
     -webkit-clip-path: circle(50% at 50% 50%);
     clip-path: circle(50% at 50% 50%);
     //if we want element to look like circle, we use clippath
-    transform: translateX(-3rem );
+    transform: translateX(-3rem ) skewX(12deg);
+    ;
     //best way to move floated elements around
   }
 
+  &__img {
+    height: 100%;
+    //100% of parent which is __shape = 15rem
+  }
+
+  &__text {
+    transform: skewX(12deg);
+  }
 }
