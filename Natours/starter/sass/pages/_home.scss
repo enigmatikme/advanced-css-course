@@ -35,3 +35,16 @@
   padding: 15rem 0;
   position: relative;
 }
+
+.section-book {
+  padding: 15rem 0;
+  background-image: linear-gradient(to right bottom, $color-primary-light, $color-primary-dark);
+}
+
+.book {
+  background-image: url(../img/nat-10.jpg);
+  background-size: 100%;
+//back-size: 100% same as cover bc it would stretch to fill entire container
+//where back img is applied
+  height: 50rem;
+}
