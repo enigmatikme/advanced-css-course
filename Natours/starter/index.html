@@ -45,7 +45,7 @@
                 <!--heading-secondary will be cenetered because it is an inline
                 block and treated as text to parent-->
                     <h2 class="heading-secondary">
-                            Exciting tours for adventurous people
+                        Exciting tours for adventurous people
                     </h2>
                 </div>
                 <div class="row">
@@ -298,14 +298,37 @@
                         <a href="#" class="btn-text">Read all stories &rarr;</a>
                 </div>
             </section>
-            <div class="section-book">
+
+            <section class="section-book">
                 <div class="row">
                     <div class="book">
-                    <!-- form component inside will be the reusable component-->
-                    
+                        <!-- form component inside will be the reusable component-->
+                        <div class="book__form">
+                            <form action="#" class="form">
+                                <div class="u-margin-bottom-medium">
+                                    <!--heading-secondary will be cenetered because it is an inline
+                                    block and treated as text to parent-->
+                                    <h2 class="heading-secondary">
+                                        Start booking now
+                                    </h2>
+                                </div>
+                                <div class="form__group">
+                                    <!-- action is script/file we want the form to go when
+                                    we hit submit-->
+                                    <input type="text" class="form__input" placeholder="Full Name" required id="name"> 
+                                    <!-- the for=name connects it to the input with the same id-->
+                                    <label for="name">Full Name</label>
+                                </div>
+                                <div class="form__group">
+                                    <input type="email" class="form__input" placeholder="Email address" required id="email"> 
+                                    <!-- email is built in val, will check email validity-->
+                                    <label for="email">Email Address</label>
+                                </div>
+                            </form>
+                        </div>
                     </div>
                 </div>
-            </div>
+            </section>
         </main>
 
         <!--

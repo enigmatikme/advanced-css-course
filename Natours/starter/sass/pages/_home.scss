@@ -42,9 +42,24 @@
 }
 
 .book {
-  background-image: url(../img/nat-10.jpg);
+  background-image: linear-gradient(105deg, 
+  rgba($color-white, .9) 0%,
+  rgba($color-white, .9) 50%,
+  transparent 50%), 
+  url(../img/nat-10.jpg);
+  //to right bottom, or specify angle 
   background-size: 100%;
-//back-size: 100% same as cover bc it would stretch to fill entire container
-//where back img is applied
+  //back-size: 100% same as cover bc it would stretch to fill entire container
+  //where back img is applied
   height: 50rem;
+  box-shadow: 0 1.5rem 4rem rgba($color-black, .2);
+  border-radius: $border-primary;
+  //TODO: change into variable
+  z-index: 1;
+  position: relative;
+
+  &__form {
+    width: 50%;
+    padding: 6rem;
+  }
 }
