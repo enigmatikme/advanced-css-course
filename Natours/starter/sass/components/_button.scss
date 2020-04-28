@@ -1,5 +1,5 @@
 .btn {
-  &:link, &:visited {
+  &, &:link, &:visited {
   /*link is the link psuedoclass. pseudoclasses: are a special state of the
   selector, it is the state of the btn selector. includes select last child,
   hover, clicked. to style elements under special conditions */
@@ -18,6 +18,10 @@
     position: relative;
     /* to hide the after pseudoelement behind our btn*/
     font-size: $default-font-size;
+
+    //change for the button el
+    border: none;
+    cursor: pointer;
   }
 
   &:hover {
@@ -34,7 +38,9 @@
     }
   }
 
-  &:active {
+  &:active,
+  &:focus {
+    outline: none;
     /* -1px is in relation to the initial state, the link state^, not the hover*/
     transform: translateY(-1px);
     box-shadow: 0 .5rem 1rem rgba($color-black, .2);
