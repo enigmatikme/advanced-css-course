@@ -19,7 +19,8 @@
     //so it has its own line
     width: 90%;
     display: block;
- 
+    transition: all .3s;
+    
     &:focus {
       //removes default blue border on focus
       outline: none;
