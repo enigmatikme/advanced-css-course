@@ -2,7 +2,6 @@
   &__checkbox {
     display: none;
     transition: all .2s;
-
   }
 
   &__button {
@@ -16,6 +15,9 @@
     border-radius: 50%;
     z-index: 2000;
     box-shadow: 0 1rem 3rem rgba($color-black, .1);
+    //centers the icon element 
+    text-align: center;
+    cursor: pointer;
   }
 
   &__background {
@@ -33,7 +35,6 @@
     //zindex only works on elements that have position defined (Fixed)
     transition: transform .8s cubic-bezier(0.83, 0, 0.17, 1);;
     //lesson 50 8:21
-
   }
 
   &__nav {
@@ -50,8 +51,6 @@
     opacity: 0;
     width: 0;
     transition: all .8s cubic-bezier(0.68, -0.6, 0.32, 1.6);
-
-  
   }
 
   &__list {
@@ -93,6 +92,7 @@
     }
   }
   
+  //FUNCTIONALITY
   &__checkbox:checked ~ &__background {
     transform: scale(80);
   }
@@ -100,5 +100,63 @@
   &__checkbox:checked ~ &__nav {
     opacity: 1;
     width: 100%;
+  }
+
+  //ICON
+  &__icon {
+    position: relative;
+    //moves the centered(via button class) down
+    margin-top: 3.5rem;
+    //creates lines
+    &, 
+    &::before,
+    &::after {
+      width: 3rem;
+      height: 2px;
+      background-color: $color-grey-dark-3;
+      display: inline-block;
+    }
+    //for before/after to actually appear
+    &::before, 
+    &::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      transition: all .2s;
+    }
+
+    &::before {
+      top: -.8rem;
+      //it rotates in center if not defined, rotates from left of el
+      // transform-origin: right;
+    }
+    &::after {
+      top: .8rem;
+      // transform-origin: left;
+    }
+  }
+
+  &__button:hover &__icon::before {
+    //we can select bc icon is child el of button
+    top: -1rem;
+  }
+  &__button:hover &__icon::after {
+    //we can select bc icon is child el of button
+    top: 1rem;
+  }
+
+  &__checkbox:checked + &__button &__icon {
+    background-color: transparent;
+  }
+
+  &__checkbox:checked + &__button &__icon:before {
+    top: 0;
+    //180-45 for 'cooler' rotate effect
+    transform: rotate(135deg);
+  }
+
+  &__checkbox:checked + &__button &__icon:after {
+    top: 0;
+    transform: rotate(-135deg);
   }
 }
