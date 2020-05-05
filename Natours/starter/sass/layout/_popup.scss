@@ -1,0 +1,72 @@
+.popup {
+  border: 2px solid $color-black;
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  background-color: rgba($color-grey-dark-3, .8);
+  top: 0;
+  left: 0;
+  z-index: 3000;
+  // text-align: center;
+
+  &__content {
+    // border: 1px solid black;
+    // @include centerhorvert;
+    // // display: inline-block;
+    // background-color: $color-white;
+    // width: 50%;
+    // height: 30rem;
+    // color: $color-tertiary-dark;
+    @include centerhorvert;
+    width: 75%;
+    background-color: $color-white;
+    box-shadow: 0 2rem 4rem rgba($color-black, .2);
+    border-radius: 3px;
+    //parent el of right and left, will auto give table-celled the same height
+    display: table;
+    overflow: hidden;
+  }
+
+  &__left {
+    width: 33.333333%;
+    //to place horizontally next to each other, dont know why need right float
+    // float: left;
+    display: table-cell;
+  }
+
+  &__right {
+    height: 66.666667%;
+    // float: left;
+    display: table-cell;
+    //table prop aligns content in midle of parent div(?)
+    vertical-align: middle;
+    padding: 3rem 5rem;
+  }
+
+  &__img {
+    display: block;
+    width: 100%;
+  }
+
+  &__text {
+    font-size: 1.4rem;
+    margin-bottom: 4rem;
+    //* can use auto-prefixer instead 
+    -moz-column-count: 2;
+    -moz-column-gap: 4rem;
+    -moz-column-rule: 1px solid $color-grey-light-2;
+
+    //new CSS prop for column text effects, auto balance heights
+    column-count: 2;
+    //default gap is 1em = 14px (based on current el font size)
+    column-gap: 4rem;
+    //border in middle of column
+    column-rule: 1px solid $color-grey-light-2;
+
+    //to auto hyphen cutoff words, must define lang in html
+    -moz-hyphens: auto;
+    -ms-hyphens: auto;
+    -webkit-hyphens: auto; 
+    hyphens: auto;
+  } 
+}
