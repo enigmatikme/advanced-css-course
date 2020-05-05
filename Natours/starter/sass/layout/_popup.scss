@@ -8,15 +8,11 @@
   left: 0;
   z-index: 3000;
   // text-align: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: all .3s;
 
   &__content {
-    // border: 1px solid black;
-    // @include centerhorvert;
-    // // display: inline-block;
-    // background-color: $color-white;
-    // width: 50%;
-    // height: 30rem;
-    // color: $color-tertiary-dark;
     @include centerhorvert;
     width: 75%;
     background-color: $color-white;
@@ -25,6 +21,11 @@
     //parent el of right and left, will auto give table-celled the same height
     display: table;
     overflow: hidden;
+    opacity: 0;
+    //must define again bc this will override earlier mixin
+    transform: translate(-50%, -50%) scale(.25);
+    //.3 delay
+    transition: all .4s .3;
   }
 
   &__left {
@@ -69,4 +70,36 @@
     -webkit-hyphens: auto; 
     hyphens: auto;
   } 
+
+  //* Open states
+  &:target &__content {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+
+  //pseudoclass for elements 'targeted' href
+  //once target changes to section tours the target behav will not apply
+  &:target {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  &__close {
+    //positioned relative to content bc direct parent doesnt have position
+    position: absolute;
+    color: $color-grey-dark;
+    top: 2.5rem;
+    right: 2.5rem;
+    text-decoration: none;
+    font-size: 3rem;
+    display: inline-block;
+    transition: all .2s;
+    //symbol is text so need to collapse height to position properly, or default
+    //height will impede 
+    line-height: 1;
+
+    &:hover {
+      color: $color-primary;
+    }
+  }
 }
