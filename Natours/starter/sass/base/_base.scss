@@ -17,7 +17,22 @@ html {
   with bad eyesight wont be able to modify root font size */
   /* .625*16 = 10 of 16px (default root font size) */
   /*! rems do not work with ie */
-  font-size: 62.5%;
+  font-size: 62.5%; //1rem = 10px 10px/16px = 62.5%
+
+  @include respond(phone) {
+  //content we passed into mixin
+    font-size: 50%;
+  }
+  @include respond(tab-land) { //width < 900?
+    font-size: 56.25%; //1rem = 9px 9px/16= 56.25%
+  }
+  //! ordered this way or else both tab queries will apply
+  @include respond(tab-port) { //width < 600?
+    font-size: 50%; //1rem = 8px 8px/16px = 50%
+  }
+  @include respond(big-desktop) {
+    font-size: 75%; //1rem = 12px 12/16= 75
+  }
 } 
 
 body {
