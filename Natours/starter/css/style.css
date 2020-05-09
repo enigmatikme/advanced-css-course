@@ -30,9 +30,6 @@ html {
   /* .625*16 = 10 of 16px (default root font size) */
   /*! rems do not work with ie */
   font-size: 62.5%; }
-  @media (max-width: 37.5em) {
-    html {
-      font-size: 50%; } }
   @media (max-width: 75em) {
     html {
       font-size: 56.25%; } }

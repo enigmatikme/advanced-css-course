@@ -19,15 +19,15 @@ html {
   /*! rems do not work with ie */
   font-size: 62.5%; //1rem = 10px 10px/16px = 62.5%
 
-  @include respond(phone) {
-  //content we passed into mixin
-    font-size: 50%;
-  }
-  @include respond(tab-land) { //width < 900?
+  // @include respond(phone) { //width < 600
+  // //content we passed into mixin
+  //   font-size: 50%;
+  // }
+  @include respond(tab-land) { //width < 1200?
     font-size: 56.25%; //1rem = 9px 9px/16= 56.25%
   }
   //! ordered this way or else both tab queries will apply
-  @include respond(tab-port) { //width < 600?
+  @include respond(tab-port) { //width < 900?
     font-size: 50%; //1rem = 8px 8px/16px = 50%
   }
   @include respond(big-desktop) {

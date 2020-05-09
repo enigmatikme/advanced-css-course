@@ -35,6 +35,8 @@ breakpoint argument choices:
 //1em = 16px (default browser)
 //! rem em are not affected by our root font size
 //! ems are best for media queries for browser compatibility
+
+//ORDER: base+ typography > general layout + grid > page layout > components 
 @mixin respond($breakpoint) {
   @if $breakpoint == phone {
     @media (max-width: 37.5em) { @content; } //600px
