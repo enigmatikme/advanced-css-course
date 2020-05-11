@@ -6,7 +6,6 @@ body {
   line-height: 1.7;
   /* 1.7 times bigger than the predefined line-height */
   color: $color-grey-dark;
-  padding: 3rem;
 }
 
 .heading-primary {
@@ -25,11 +24,15 @@ body {
     font-weight: 400;
     font-size: 6rem;
     letter-spacing: 3.5rem;
-  
+    
     animation-name: moveInLeft;
     animation-duration: 1s;
     animation-timing-function: ease-out;
-  
+    
+    @include respond(phone) {
+      letter-spacing: 1rem;
+      font-size: 5rem;
+    }
     /* animation-delay: 3s;
     animation-iteration-count: 3; */
     
@@ -43,6 +46,10 @@ body {
   
     /* instead of writing line 82-84 you can use animation prop to define vals */
     animation: moveInRight 1s ease-out;
+
+    @include respond(phone) {
+      letter-spacing: .5rem;
+    }
   }
 }
 
@@ -63,6 +70,14 @@ body {
   // bc of rounding issues such a small px doesn't have to be rem (2px)
   transition: all .2s;
   // all - all props that can undergo transition will do so
+
+  @include respond(tab-port) {
+    font-size: 3rem ;
+  }
+
+  @include respond(phone) {
+    font-size: 2.5rem;
+  }
 
   &:hover {
     transform: skewY(2deg) skewX(15deg) scale(1.1);
