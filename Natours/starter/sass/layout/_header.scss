@@ -9,13 +9,23 @@
     /* only in sass can you insert hexidecimal val */
     rgba($color-primary-light, 0.8),
     rgba($color-primary-dark, 0.8)), 
-  url(../img/hero.jpg);
+  url(../img/hero-small.jpg);
   background-size: cover;
   /* makes sure that it stretches out while maintaing its aspect ratio */
   background-position: top;
   /* as image size changes (resizing browser) image will remain attached on top */
   -webkit-clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
   clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+
+  //resolution of retina screen (dots per inch), if higher, load this. or 200px
+  @media (min-resolution: 192dpi) and (min-width: 37.5em), (min-width: 125em){
+    background-image: linear-gradient(
+      to right bottom,
+      /* only in sass can you insert hexidecimal val */
+      rgba($color-secondary-light, 0.8),
+      rgba($color-secondary-dark, 0.8)), 
+    url(../img/hero.jpg);
+  }
 
   @include respond(phone) {
     -webkit-clip-path: polygon(0 0, 100% 0, 100% 85vh, 0 100%);
