@@ -22,6 +22,7 @@
   //if under $grid-width, will fill 100% of available width
   @include respond(tab-port) {
     max-width: 50rem;
+    padding: 0 3rem;
   }
   // selects last child 
   // &:last-child {

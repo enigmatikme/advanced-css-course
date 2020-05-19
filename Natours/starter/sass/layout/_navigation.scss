@@ -18,7 +18,17 @@
     //centers the icon element 
     text-align: center;
     cursor: pointer;
+
+    @include respond(tab-port) {
+      top: 4rem;
+      right: 4rem;
+    }
+    @include respond(phone) {
+      top: 3rem;
+      right: 3rem;
+    }
   }
+
 
   &__background {
     height: 6rem;
@@ -35,7 +45,17 @@
     //zindex only works on elements that have position defined (Fixed)
     transition: transform .8s cubic-bezier(0.83, 0, 0.17, 1);;
     //lesson 50 8:21
+    @include respond(tab-port) {
+      top: 4.5rem;
+      right: 4.5rem;
+    }
+
+    @include respond(phone) {
+      top: 3.5rem;
+      right: 3.5rem;
+    }
   }
+
 
   &__nav {
     height: 100vh;
