@@ -22,6 +22,7 @@
     left: 0;
     //pos absolute takes it out of flow so div only fits necessary width
     width: 100%;
+    -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
     //hides back part of element, wont be able to see backside of card
     border-radius: 3px;
