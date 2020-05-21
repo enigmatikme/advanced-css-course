@@ -28,18 +28,29 @@
     height: 15rem;
     float: left;
     background-color: orangered;
-    -webkit-shape-outside: circle(50% at 50% 50%);
     //defines where the content flows around the element -- circle
     shape-outside: circle(50% at 50% 50%);
     //define a vectorize shape, for circle you define size and position of the
     //center [radius relative to current element (7.5r 15 in diameter), x y]
-    //* for this to work this element must be floated, and must have dimensions (width/height)
-    -webkit-clip-path: circle(50% at 50% 50%);
-    clip-path: circle(50% at 50% 50%);
     //if we want element to look like circle, we use clippath
     transform: translateX(-3rem ) skewX(12deg);
     //best way to move floated elements around
     position: relative;
+    
+    //*for support query
+    //image overlaps width/height so must hide 
+    overflow: hidden;
+    border-radius: 50%;
+    
+    @supports (clip-path: circle(50% at 50% 50%)) or (-webkit-clip-path: circle(50% at 50% 50%)) {
+      -webkit-shape-outside: circle(50% at 50% 50%);
+      //* for this to work this element must be floated, and must have dimensions (width/height)
+      -webkit-clip-path: circle(50% at 50% 50%);
+      clip-path: circle(50% at 50% 50%);
+      width: 15rem;
+      height: 15rem;
+      border-radius: none;
+    }
 
     @include respond(phone) {
       transform: translateX(-3rem ) skewX(0);
