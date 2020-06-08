@@ -2,17 +2,58 @@
 //LOGO
 .logo {
   height: 3.25rem;
+  margin: 3rem;
 }
 
 /////////////////////////////////////////
 //SEARCH
 .search {
-  &__input {
+  background-color: orangered;
+  //(width), since its flex item, use flex prop
+  flex: 0 0 40%;
+  //[grow -- theres more space , shrink -- if not enough space, basis want to keep at]
+  // moves search icon in lign because of align-items: stretch
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
+  &__input {
+  //must declare font fam because input does not inherit from global document
+    font-family: inherit;
+    font-size: inherit;
+    color: inherit;
+    background-color: var(--color-grey-light-2);
+    border: none;
+    padding: .7rem 2rem;
+    border-radius: 100px;
+    width: 90%;
+    margin-right: -3.25rem;
+    transition: all .2s;
+
+    &:focus {
+      width: 100%;
+      outline: none;
+      background-color: var(--color-grey-light-3);
+    }
+  }
+
+  //select sibling element of selected el
+  //? focus doesnt inherit backgcolor? why not just apply behav on button el
+  &__input:focus + &__button {
+    background-color: var(--color-grey-light-3);
   }
 
   &__button {
+    border: none;
+    background-color: var(--color-grey-light-2);
 
+    &:focus {
+      outline: none;
+    }
+
+    &:active {
+      transform: translateY(2px)
+    }
   }
 
   &__icon {
@@ -24,6 +65,7 @@
 /////////////////////////////////////////
 //USER NAVIGATION
 .user-nav {
+  background-color: greenyellow;
   &__icon-box {
 
   }
